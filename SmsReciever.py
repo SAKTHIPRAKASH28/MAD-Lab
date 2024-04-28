@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(phoneNumber, null, message, null, null);
             Toast.makeText(getApplicationContext(), "SMS sent.", Toast.LENGTH_SHORT).show();
-
-            Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + "9790362056,8056496700"));
+            //Group chat
+            Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + "phone numbers"));
             smsIntent.putExtra("sms_body", message);
             startActivity(smsIntent);
         } catch (Exception e) {
