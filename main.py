@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 
-PASSWORD = "MAD_LAB"
+PASSWORD = "surya"
 
 @app.route("/")
 def index():
