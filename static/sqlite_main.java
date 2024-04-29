@@ -48,15 +48,15 @@ public class MainActivity extends AppCompatActivity {
                 if (!name.isEmpty() && !email.isEmpty()) {
                     long id = contactManager.addContact(name, email);
                     if (id != -1) {
-                        Toast.makeText(MainActivity.this, "Contact added successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(video.this, "Contact added successfully", Toast.LENGTH_SHORT).show();
                         displayContacts();
                         nameEditText.setText("");
                         emailEditText.setText("");
                     } else {
-                        Toast.makeText(MainActivity.this, "Error adding contact", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(video.this, "Error adding contact", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(MainActivity.this, "Please enter name and email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(video.this, "Please enter name and email", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -69,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
 
                 if (selectedContactId != -1 && !name.isEmpty() && !email.isEmpty()) {
                     contactManager.updateContact(selectedContactId, name, email);
-                    Toast.makeText(MainActivity.this, "Contact updated successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(video.this, "Contact updated successfully", Toast.LENGTH_SHORT).show();
                     displayContacts();
                     nameEditText.setText("");
                     emailEditText.setText("");
                     selectedContactId = -1;
                 } else {
-                    Toast.makeText(MainActivity.this, "Please select a contact and enter name and email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(video.this, "Please select a contact and enter name and email", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -85,13 +85,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (selectedContactId != -1) {
                     contactManager.deleteContact(selectedContactId);
-                    Toast.makeText(MainActivity.this, "Contact deleted successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(video.this, "Contact deleted successfully", Toast.LENGTH_SHORT).show();
                     displayContacts();
                     nameEditText.setText("");
                     emailEditText.setText("");
                     selectedContactId = -1;
                 } else {
-                    Toast.makeText(MainActivity.this, "Please select a contact to delete", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(video.this, "Please select a contact to delete", Toast.LENGTH_SHORT).show();
                 }
             }
         });
