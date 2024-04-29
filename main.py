@@ -20,7 +20,18 @@ def content():
 @app.route("/static/<path:filename>")
 def serve_static(filename):
     root_dir = os.path.dirname(os.getcwd())
-    return send_from_directory(os.path.join(root_dir, 'static'), filename)
+    file_path = os.path.join(root_dir, 'static', filename)
+
+    # Check if the file exists
+    if not os.path.isfile(file_path):
+        return "File not found", 404
+
+    # Determine MIME type based on file extension
+    mime_type = "application/octet-stream"
+    if filename.endswith('.zip'):
+        mime_type = "application/zip"
+
+    return send_from_directory(os.path.join(root_dir, 'static'), filename, mimetype=mime_type)
 
 if __name__ == "__main__":
     app.run(debug=True)
